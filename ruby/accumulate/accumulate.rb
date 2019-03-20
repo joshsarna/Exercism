@@ -1,10 +1,8 @@
 class Array
   def accumulate
-    b = lambda
     output = self
-    output.each do |element|
-      element = b.call element
+    return output.map do |element|
+      yield(element)
     end
-    return output
   end
 end
